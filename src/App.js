@@ -1,10 +1,12 @@
-import './App.css';
+//import './App.css';
+import './sass/custom.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       Hola Mundo!!! ✋🏼✋🏼✋🏼
+       <NavBar/>
       </header>
     </div>
   );
