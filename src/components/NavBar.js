@@ -1,31 +1,53 @@
 import React from "react";
-import '../sass/custom.css';
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js";
+import "../sass/custom.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import CartWidget from "./CartWidget";
 
-function NavBar() {
+
+const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
-    <div className="container-fluid">
-      <a className="navbar-brand" aria-current="page" href="#">
-      <img
+    <nav className="navbar navbar-expand-md bg-light shadow-sm">
+      
+      <div className="container-fluid">
+      <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      <div>
+        <a className="navbar-brand" aria-current="page" href="#">
+          <img
             src={require("../imgs/logo_hor_celebra.png")}
             alt="Logo"
             height="50"
           ></img>
-      </a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <a className="nav-link link-primary" href="#">Invitación</a>
-          <a className="nav-link link-primary" href="#">Productos</a>
-          <a className="nav-link link-primary" href="#">Momentos</a>
-        </div>
+        </a>
       </div>
-    </div>
-  </nav>
+        
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div className="navbar-nav">
+            <a className="nav-link link-primary" href="#">
+              Invitación
+            </a>
+            <a className="nav-link link-primary" href="#">
+              Productos
+            </a>
+            <a className="nav-link link-primary" href="#">
+              Momentos
+            </a>
+          </div>
+        </div>
+        <CartWidget/>
+      </div>
+      
+    </nav>
   );
-}
+};
 
 export default NavBar;
