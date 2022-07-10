@@ -23,7 +23,7 @@ const NavBar = () => {
       <div>
         <a className="navbar-brand" aria-current="page" href="#">
           <img
-            src={require("../imgs/logo_hor_celebra.png")}
+            src={require("../assets/img/logo_hor_celebra.png")}
             alt="Logo"
             height="50"
           ></img>
