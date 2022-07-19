@@ -22,11 +22,11 @@ const ItemCount = ({initial, stock, onAdd}) => {
     }
 
     return ( 
-        <div className=''>
+        <div className='d-flex align-items-end'>
             <div className="btn-toolbar" role="toolbar" >
                 <button className='btn btn-outline-info' onClick={Subs}>-</button>
-                <p className='mx-5 my-auto fs-4 text-primary'>{counter}</p>
-                <button className='btn btn-outline-info' onClick={Add}>+</button>
+                <p className='px-4 mx-1 my-auto fs-4 text-primary border border-info rounded'>{counter}</p>
+                <button className='btn btn-outline-info me-4' onClick={Add}>+</button>
             </div>
             <button className='btn btn-info text-light mt-2' onClick={() => onAdd(counter)} >Agregar al carrito</button>
         </div>
