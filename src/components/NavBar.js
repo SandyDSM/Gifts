@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../sass/custom.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import CartWidget from "./CartWidget";
@@ -22,25 +23,22 @@ const NavBar = () => {
         </button>
       <div>
         <a className="navbar-brand" aria-current="page" href="#">
-          <img
+          <Link to="/"><img
             src={require("../assets/img/logo_hor_celebra.png")}
             alt="Logo"
             height="50"
-          ></img>
+          ></img></Link>
         </a>
       </div>
         
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <div className="navbar-nav">
-            <a className="nav-link link-primary" href="#">
-              Invitación
-            </a>
-            <a className="nav-link link-primary" href="#">
+            <Link to="/category/2" className="nav-link link-primary">
               Productos
-            </a>
-            <a className="nav-link link-primary" href="#">
+            </Link>
+            <Link to="/category/1" className="nav-link link-primary" href="#">
               Momentos
-            </a>
+            </Link>
           </div>
         </div>
         <CartWidget/>
