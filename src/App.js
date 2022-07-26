@@ -3,6 +3,7 @@ import "./sass/custom.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./container/ItemListContainer";
 import ItemDetailContainer from "./container/ItemDetailContainer";
+import ItemListCart from "./container/ItemListCart";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/category/:id" element={<ItemListContainer />} />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<ItemListCart />} />
           </Routes>
         </div>
       </div>

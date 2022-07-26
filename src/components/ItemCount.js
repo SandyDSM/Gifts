@@ -17,6 +17,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
             const subs = counter -1;
             setCounter(subs)
         }else{
+            setCounter(0)
             console.log("ya no esta en tu carrito")
         }
     }
@@ -24,11 +25,19 @@ const ItemCount = ({initial, stock, onAdd}) => {
     return ( 
         <div className='d-flex align-items-end'>
             <div className="btn-toolbar" role="toolbar" >
-                <button className='btn btn-outline-info' onClick={Subs}>-</button>
+                {
+                    counter==0
+                   ? <button className='btn btn-outline-info' disabled>-</button>
+                   : <button className='btn btn-outline-info' onClick={Subs}>-</button>
+                }
                 <p className='px-4 mx-1 my-auto fs-4 text-primary border border-info rounded'>{counter}</p>
                 <button className='btn btn-outline-info me-4' onClick={Add}>+</button>
             </div>
-            <button className='btn btn-info text-light mt-2' onClick={() => onAdd(counter)} >Agregar al carrito</button>
+            {
+                counter==0
+               ? <button className='btn btn-info text-light mt-2' disabled >Agregar al carrito</button> 
+               : <button className='btn btn-info text-light mt-2' onClick={() => onAdd(counter)} >Agregar al carrito</button>
+            }
         </div>
      );
 }

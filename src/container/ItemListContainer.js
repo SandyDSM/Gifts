@@ -28,13 +28,11 @@ const ItemListContainer = () => {
         }     
     }, [id])
 
-    const onAdd = (param) =>{
-        console.log(`Cantidad comprada: ${param}`);
-    }
+   
     return(
         <div className="row">
             <ItemList data={data}/>
-            <ItemCount initial={0} stock={5} onAdd={onAdd}/>
+           
         </div>
     );
 }
