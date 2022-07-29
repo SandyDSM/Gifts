@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import "../sass/custom.css";
+import { CartContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ product }) => {
   const [AddCart, setAddCart] = useState(false);
-  const onAdd = (param) =>{
+  const test = useContext(CartContext)
+
+  const onAdd = (quantity) =>{
     setAddCart(true)
-    console.log(`Cantidad comprada: ${param}`);
+    console.log(`Cantidad comprada: ${quantity}`);
+    test.addToCart(product, quantity);
 }
   return (
     <div className="row">
@@ -17,7 +21,7 @@ const ItemDetail = ({ product }) => {
       <div className="col-12 col-md-6 col-lg-7 mt-3 mt-md-0">
         <h1>{product.name}</h1>
         <hr></hr>
-        <h2 className="text-primary display-5">{product.price}</h2>
+        <h2 className="text-primary display-5">${product.price}</h2>
         <p>{product.description}</p>
         <p className="lead">{product.stock} disponibles</p>
         <hr></hr>
