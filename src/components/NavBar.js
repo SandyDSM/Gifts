@@ -41,7 +41,9 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <CartWidget/>
+        <Link to="/cart">
+          <CartWidget/>
+        </Link>
       </div>
       
     </nav>
