@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from "react";
 import "../sass/custom.css";
-import ItemCount from "../components/ItemCount";
 import ItemList from "./ItemList";
-import products from "../data/products.json"
+//import products from "../data/products.json"
 import { useParams } from "react-router";
+import {db} from "../utils/firebaseConfig" 
+import { collection, getDocs, query, where } from "firebase/firestore";
+
+
 
 const ItemListContainer = () => {
 
@@ -11,7 +14,8 @@ const ItemListContainer = () => {
     const{ id } = useParams();  
 
     useEffect(()=>{
-        if( id === undefined){
+       /* -------  LLAMANDO DESDE EL JSON INTERNO
+       if( id === undefined){
             const getProducts = new Promise(resolve => {
                 setTimeout(() => {
                     resolve(products)
@@ -25,7 +29,17 @@ const ItemListContainer = () => {
                 }, 1000)
             });
             getProducts.then(res => setdata(res))
-        }     
+        }     */
+        
+        const querySnapshot = collection(db, "products");
+        if(id){
+            const queryFilter = query(querySnapshot, where('categoryId', '==',  parseInt(id) ))
+            getDocs(queryFilter)
+            .then(res =>setdata(res.docs.map(product =>({id: product.id, ...product.data()}))))
+        }else{
+            getDocs(querySnapshot)
+            .then(res =>setdata(res.docs.map(product =>({id: product.id, ...product.data()}))))
+        }
     }, [id])
 
    
