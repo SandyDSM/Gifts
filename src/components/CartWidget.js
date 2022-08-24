@@ -11,7 +11,7 @@ const CartWidget = () => {
       <GiftFill color="#C9B313" size={20} ></GiftFill>
       {
         test.totalProducts() > 0
-      ?(<span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">{test.totalProducts()}<span class="visually-hidden">cart</span></span>)
+      ?(<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">{test.totalProducts()}<span className="visually-hidden">cart</span></span>)
       :<></>
       }
     </div>

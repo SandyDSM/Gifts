@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router";
 import "../sass/custom.css";
-import products from "../data/products.json"
+//import products from "../data/products.json"
 import ItemDetail from "../components/ItemDetail"
 import {db } from "../utils/firebaseConfig"
 import { doc, getDoc } from "firebase/firestore";
@@ -13,7 +13,8 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(()=>{
-       /* const getProducts = new Promise(resolve => {
+       /* ---- DESDE ARCHIVO JSON -----
+       const getProducts = new Promise(resolve => {
             setTimeout(() => {
                 resolve(products)
             }, 1000)

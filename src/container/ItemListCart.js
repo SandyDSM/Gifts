@@ -6,7 +6,6 @@ import "../sass/custom.css";
 import ItemCart from "../components/ItemCart";
 import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import {db} from "../utils/firebaseConfig"
-import { async } from "@firebase/util";
 
 const ItemListCart = () => {
   const test = useContext(CartContext);

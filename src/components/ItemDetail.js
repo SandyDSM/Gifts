@@ -13,8 +13,7 @@ const ItemDetail = ({ product }) => {
     console.log(`Cantidad comprada: ${quantity}`);
     test.addToCart(product, quantity);
 }
-  console.log(product);
-  if (product.id == undefined) {
+  if (product.id === undefined) {
     return (
       <div className="row justify-content-center align-items-center">
         <div
@@ -29,7 +28,7 @@ const ItemDetail = ({ product }) => {
   return (
     <div className="row">
       <div className="col-12 col-md-6 col-lg-5">
-          <img src={product.img} class="img-fluid" alt={product.name}></img>
+          <img src={product.img} className="img-fluid" alt={product.name}></img>
       </div>
       <div className="col-12 col-md-6 col-lg-7 mt-3 mt-md-0">
         <h1>{product.name}</h1>

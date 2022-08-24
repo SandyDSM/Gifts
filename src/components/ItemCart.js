@@ -10,7 +10,7 @@ const ItemCart = ({product}) => {
     <>
             <div className="d-md-flex align-items-center mx-3 text-center" >
               <div className="col-12 col-md-3">
-                <img src={product.img} class="img-fluid" alt={product.name}></img>
+                <img src={product.img} className="img-fluid" alt={product.name}></img>
               </div>
                 <div className="col-12 col-md-3 mt-3 mt-md-0">
                   <p className="lead">{product.name}</p>

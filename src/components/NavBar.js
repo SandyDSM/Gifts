@@ -22,13 +22,13 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
       <div>
-        <a className="navbar-brand" aria-current="page" href="#">
+        <div className="navbar-brand">
           <Link to="/"><img
             src={require("../assets/img/logo_hor_celebra.png")}
             alt="Logo"
             height="50"
           ></img></Link>
-        </a>
+        </div>
       </div>
         
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -36,7 +36,7 @@ const NavBar = () => {
             <Link to="/category/2" className="nav-link link-primary">
               Productos
             </Link>
-            <Link to="/category/1" className="nav-link link-primary" href="#">
+            <Link to="/category/1" className="nav-link link-primary">
               Momentos
             </Link>
           </div>
